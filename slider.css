@@ -1,0 +1,91 @@
+/* Full-screen background */
+.slider-container {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 200px; /* This is reduced from previous to prevent excessive right alignment */
+  }
+  
+  /* Right column for heading and options */
+  .right-column {
+    color: black;
+    text-align: left;
+    max-width: 600px; /* Slightly narrower column */
+  }
+  
+  /* Heading style */
+  #dynamic-heading {
+    font-family: 'Helvetica Black', sans-serif;
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-bottom: 20px; /* Slightly bigger margin under heading */
+  }
+  
+  /* Options list */
+  .options {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'Helvetica Black', sans-serif;
+    font-size: 14px;
+  }
+  
+  .options li {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-bottom: 0px; /* Ensure some spacing, but reduce it to tighten up the layout */
+    padding: px 0;
+    position: relative;
+    transition: color 0.2s ease;
+  }
+  
+  .options li.active {
+    color: black;
+  }
+  
+  .options li:hover {
+    color: #0073e6;
+  }
+  
+  /* Line next to hovered option */
+  .options li::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #0073e6;
+    position: absolute;
+    left: -19px;
+    top: 30%;
+    transition: width 0.2s ease;
+  }
+  
+  .options li:hover::before, .options li.active::before {
+    width: 15px;
+  }
+  
+  /* Description text next to options */
+  .description-text {
+    margin-left: 60px; /* Keep description text close to the option */
+    font-size: 13px; /* Slightly smaller description text */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  /* Show description on hover */
+  .options li:hover .description-text {
+    opacity: 1;
+  }
+  
+  /* Keep description visible for active item */
+  .options li.active .description-text {
+    opacity: 1;
+  }
